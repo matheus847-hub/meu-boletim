@@ -1,0 +1,150 @@
+/* Reset básico de margens e fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo escuro minimalista */
+body {
+  background-color: #0b0c10;
+  color: #c5c6c7;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Container centralizado */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  color: #66fcf1;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+/* Animação das sombras RGB */
+@keyframes brilhoRGB {
+  0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
+  33% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.4); }
+  66% { box-shadow: 0 0 15px rgba(0, 0, 255, 0.4); }
+  100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
+}
+
+/* Grid responsivo dos cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+/* Cards com cantos arredondados e iluminação RGB */
+.card {
+  background-color: #1f2833;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #333;
+  animation: brilhoRGB 6s infinite ease-in-out;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: #c5c6c7;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.valor-card {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.sub-card {
+  font-size: 0.75rem;
+  color: #45a29e;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Tabela responsiva */
+.tabela-container {
+  overflow-x: auto;
+  background-color: #1f2833;
+  border-radius: 12px;
+  border: 1px solid #333;
+  animation: brilhoRGB 6s infinite ease-in-out;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 650px;
+}
+
+th, td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #2c3540;
+}
+
+th {
+  background-color: #0b0c10;
+  color: #66fcf1;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+tr:hover {
+  background-color: #26313f;
+}
+
+/* Estilos de Situação */
+.situacao-bom {
+  color: #4eef90;
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: #ff5555;
+  font-weight: bold;
+}
+
+.situacao-indisponivel {
+  color: #888888;
+}
+
+/* Ajustes para telas menores (celular) */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
