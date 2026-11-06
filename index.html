@@ -12,57 +12,84 @@
     <!-- Cabeçalho principal -->
     <header>
       <h1>Boletim Digital</h1>
-      <p class="subtitulo">9º Ano — Estudante Exemplo</p>
+      <p class="subtitulo">9º Ano — Turma 9B — Nº 40</p>
     </header>
 
-    <!-- Área de Cards de Resumo -->
-    <section class="cards-grid">
-      <div class="card">
-        <h3>Média Geral</h3>
-        <p id="media-geral" class="valor-card">—</p>
+    <!-- Área de Login por PIN -->
+    <section id="area-login" class="card-login">
+      <h2>Acesso ao Boletim</h2>
+      <div class="info-estudante">
+        <span><strong>Turma:</strong> 9B</span>
+        <span><strong>Chamada:</strong> 40</span>
       </div>
-
-      <div class="card">
-        <h3>Total de Faltas</h3>
-        <p id="total-faltas" class="valor-card">—</p>
+      <div class="form-login">
+        <label for="input-pin">Digite seu PIN:</label>
+        <input type="password" id="input-pin" maxlength="10" placeholder="PIN">
+        <button id="btn-entrar" onclick="fazerLogin()">Entrar</button>
       </div>
-
-      <div class="card">
-        <h3>Bom Desempenho</h3>
-        <p id="qtd-bom" class="valor-card">—</p>
-      </div>
-
-      <div class="card">
-        <h3>Atenção</h3>
-        <p id="qtd-atencao" class="valor-card">—</p>
-      </div>
-
-      <div class="card">
-        <h3>Frequência</h3>
-        <p id="frequencia-demonstrativa" class="valor-card">92%</p>
-        <span class="sub-card">Frequência adequada</span>
-      </div>
+      <p id="mensagem-login" class="mensagem-status"></p>
     </section>
 
-    <!-- Tabela Responsiva de Notas -->
-    <section class="tabela-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>1º Tri</th>
-            <th>2º Tri</th>
-            <th>3º Tri</th>
-            <th>Média</th>
-            <th>Faltas</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <tbody id="corpo-tabela">
-          <!-- As linhas com as 15 disciplinas serão geradas pelo JavaScript -->
-        </tbody>
-      </table>
-    </section>
+    <!-- Conteúdo do Boletim (oculto até o login) -->
+    <div id="conteudo-boletim" style="display: none;">
+      
+      <!-- Painel de Ações do Aluno -->
+      <div class="painel-acoes">
+        <button id="btn-alternar-edicao" onclick="alternarEdicao()">Alterar dados</button>
+        <button id="btn-salvar" onclick="salvarDadosAPI()" style="display: none;">Salvar alterações</button>
+        <span id="mensagem-salvar" class="mensagem-status"></span>
+      </div>
+
+      <!-- Área de Cards de Resumo -->
+      <section class="cards-grid">
+        <div class="card">
+          <h3>Média Geral</h3>
+          <p id="media-geral" class="valor-card">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Total de Faltas</h3>
+          <p id="total-faltas" class="valor-card">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Bom Desempenho</h3>
+          <p id="qtd-bom" class="valor-card">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Atenção</h3>
+          <p id="qtd-atencao" class="valor-card">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Frequência</h3>
+          <p id="frequencia-demonstrativa" class="valor-card">92%</p>
+          <span class="sub-card">Frequência adequada</span>
+        </div>
+      </section>
+
+      <!-- Tabela Responsiva de Notas -->
+      <section class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela">
+            <!-- As linhas com as disciplinas serão geradas pelo JavaScript -->
+          </tbody>
+        </table>
+      </section>
+
+    </div>
   </div>
 
   <!-- Conexão com o script em JavaScript -->
