@@ -69,6 +69,33 @@
         </div>
       </section>
 
+      <!-- Área dos 3 Gráficos -->
+      <section class="area-graficos">
+        <article class="grafico-card">
+          <h2>Média por disciplina</h2>
+          <div class="grafico-container">
+            <canvas id="graficoMediasDisciplinas"></canvas>
+          </div>
+        </article>
+
+        <article class="grafico-card">
+          <h2>Evolução da média geral</h2>
+          <div class="grafico-container">
+            <canvas id="graficoEvolucaoTrimestres"></canvas>
+          </div>
+        </article>
+
+        <article class="grafico-card" id="card-faltas">
+          <div class="cabecalho-card-faltas">
+            <h2>Faltas por trimestre</h2>
+            <span id="estadoFaltas" class="badge-perigo" style="display: none;">Perigo</span>
+          </div>
+          <div class="grafico-container">
+            <canvas id="graficoFaltasTrimestres"></canvas>
+          </div>
+        </article>
+      </section>
+
       <!-- Tabela Responsiva de Notas -->
       <section class="tabela-container">
         <table>
@@ -92,6 +119,8 @@
     </div>
   </div>
 
+  <!-- Inclusão da biblioteca Chart.js antes do script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Conexão com o script em JavaScript -->
   <script src="script.js"></script>
 </body>
